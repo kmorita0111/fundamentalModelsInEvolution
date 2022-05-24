@@ -62,7 +62,7 @@ if( updateMode == 0 ){
       } else if( j == Nl ){
         lat[1,Nl] <- calc( c(lat[Nl,Nl], lat[2,Nl], lat[1,Nl-1], lat[1,1]), qk )
       } else {
-        lat[i,j] <- calc( c(lat[Nl,j], lat[2,j], lat[1,j-1], lat[1,j+1]), qk )
+        lat[1,j] <- calc( c(lat[Nl,j], lat[2,j], lat[1,j-1], lat[1,j+1]), qk )
       } 
     } else if( i == Nl ){
       if( j == 1 ){
@@ -70,13 +70,13 @@ if( updateMode == 0 ){
       } else if( j == Nl ){
         lat[Nl,Nl] <- calc( c(lat[Nl-1,Nl], lat[1,Nl], lat[Nl,Nl-1], lat[Nl,1]), qk )
       } else {
-        lat[i,j] <- calc( c(lat[Nl-1,j], lat[1,j], lat[Nl,j-1], lat[Nl,j+1]), qk )
+        lat[Nl,j] <- calc( c(lat[Nl-1,j], lat[1,j], lat[Nl,j-1], lat[Nl,j+1]), qk )
       } 
     } else {
       if( j == 1 ){
-        lat[Nl,1] <- calc( c(lat[i-1,1], lat[i+1,1], lat[i,Nl], lat[i,2]), qk ) # 上下左右
+        lat[i,1] <- calc( c(lat[i-1,1], lat[i+1,1], lat[i,Nl], lat[i,2]), qk ) # 上下左右
       } else if( j == Nl ){
-        lat[Nl,1] <- calc( c(lat[i-1,Nl], lat[i+1,Nl], lat[i,Nl-1], lat[i,1]), qk )
+        lat[i,Nl] <- calc( c(lat[i-1,Nl], lat[i+1,Nl], lat[i,Nl-1], lat[i,1]), qk )
       } else {
         lat[i,j] <- calc( c(lat[i-1,j], lat[i+1,j], lat[i,j-1], lat[i,j+1]), qk )
       } 
