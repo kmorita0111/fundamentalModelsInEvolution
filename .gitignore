@@ -2,3 +2,8 @@
 fundamentalModelsInEvolution.Rproj
 .RData
 .Rhistory
+.DS_Store
+
+# file
+*.png
+*.gif
